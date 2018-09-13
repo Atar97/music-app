@@ -69,3 +69,7 @@ header {
 .login:visited {
   color: inherit;
 }
+
+a {
+  padding: 5px;
+}
