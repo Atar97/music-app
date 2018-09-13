@@ -14,6 +14,10 @@ class BandsController < ApplicationController
   end
 
   def destroy
+    unless @band.destroy
+      flash[:errors] = ["The Band Couldn't Be Deleted"]
+    end
+    redirect_to bands_url
   end
 
   def update
