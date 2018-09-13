@@ -16,4 +16,6 @@ class Album < ApplicationRecord
   validates :live, inclusion: [true, false]
 
   belongs_to :band
+
+  has_many :tracks
 end
