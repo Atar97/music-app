@@ -13,4 +13,11 @@ ActiveRecord::Base.transaction do
     {email: "steve@email.com", password: 'football'}
     ])
 
+  bands = Band.create([
+    {name: "Death Cab For Cutie"},
+    {name: "Glass Animals"},
+    {name: "DMX"},
+    {name: "Led Zepplin"}
+    ])
+
 end
