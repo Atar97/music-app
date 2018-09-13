@@ -8,11 +8,25 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <header>
+    <% if loggedin? %>
+      <%= @user.email %>
+    <% end %>
+  </header>
   <body>
     <%= yield %>
     <footer>
       <a href="<%= users_url %>">Return to Users Page</a>
+      <br><br>
+      <% if loggedin? %>
+        <form class="" action="<%= session_url %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" name="" value="Logout!">
+        </form>
+        <% else %>
+        <a href="<%= new_session_url %>">Log In!</a>
+        <% end %>
+
       <%= yield :footer %>
     </footer>
   </body>
