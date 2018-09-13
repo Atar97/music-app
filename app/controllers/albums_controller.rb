@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_action :find_album, only: [:edit, :update, :delete, :show]
+  before_action :find_album, only: [:edit, :update, :destroy, :show]
   before_action :find_band, only: [:new]
 
   def new
@@ -37,6 +37,13 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
+    band_id = @album.band_id
+    if @album.destroy
+      redirect_to band_url(band_id)
+    else
+      flash[:errors] = ["Album Couldn't Be Deleted"]
+      redirect_to album_url(@album)
+    end 
   end
 
   private
