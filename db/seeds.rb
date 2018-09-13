@@ -7,17 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ActiveRecord::Base.transaction do
-
+  User.destroy_all
   users = User.create([
     {email: "austin@email.com", password: "password"},
     {email: "steve@email.com", password: 'football'}
     ])
-
+  Band.destroy_all
   bands = Band.create([
     {name: "Death Cab For Cutie"},
     {name: "Glass Animals"},
     {name: "DMX"},
     {name: "Led Zepplin"}
+    ])
+  Album.destroy_all
+  albums = Album.create([
+    {title: "Led Zepplin 1", band_id: bands.last.id, yr: 1971, live: false},
+    {title: "Led Zepplin 2", band_id: bands.last.id, yr: 1974, live: false},
+    {title: "Thank You For Today", band_id: bands.first.id, yr: 2018, live: false}
     ])
 
 end
