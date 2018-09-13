@@ -11,5 +11,9 @@
 
   <body>
     <%= yield %>
+    <footer>
+      <a href="<%= users_url %>">Return to Users Page</a>
+      <%= yield :footer %>
+    </footer>
   </body>
 </html>
