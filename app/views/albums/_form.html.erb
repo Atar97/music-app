@@ -10,12 +10,15 @@
   <label>Release Year:
     <input type="text" name="album[yr]" value="<%= album.yr %>">
   </label>
-  <select class="" name="album[band_id]">
-    <% Band.all.each do |band| %>
-    <option value="<%= band.id %>" <%= album.band_id == band.id ? "selected" : "" %> >
-      <%= band.name %></option>
-    <% end %>
-  </select>
+  <label>Band Name:
+    <select class="" name="album[band_id]">
+      <option disabled selected>--Choose A Band--</option>
+      <% Band.all.each do |band| %>
+      <option value="<%= band.id %>" <%= band.id == band_id.to_i ? "selected" : "" %> >
+        <%= band.name %></option>
+      <% end %>
+    </select>
+</label>
   <div class="radio">
     <label>Studio Album
       <input type="radio" name="album[live]" value="false"

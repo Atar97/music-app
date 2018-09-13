@@ -13,4 +13,5 @@
     <input type="hidden" name="_method" value="delete">
     <input type="submit" name="" value="Delete This Band">
   </form>
+  <a href="<%= new_band_album_url(@band) %>">Add an Album for <%= @band.name %></a>
 <%= render 'footer' %>
