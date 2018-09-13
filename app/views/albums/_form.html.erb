@@ -1,10 +1,14 @@
-<form class="sign-up" action="<%= albums_url %>" method="post">
+
+<form class="sign-up" action="<%= album.title ? album_url(album) : albums_url  %>" method="post">
+  <% if album.title %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
   <%= auth_token %>
   <label>Title:
     <input type="text" name="album[title]" value="<%= album.title %>">
   </label>
   <label>Release Year:
-    <input type="text" name="album[year]" value="<%= album.yr %>">
+    <input type="text" name="album[yr]" value="<%= album.yr %>">
   </label>
   <select class="" name="album[band_id]">
     <% Band.all.each do |band| %>
@@ -23,4 +27,5 @@
     </label>
 </div>
 
+  <input type="submit" name="" value="submit">
 </form>

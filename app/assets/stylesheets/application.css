@@ -27,6 +27,16 @@ h2 {
   font-size: 26px;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+li {
+  padding: 5px;
+}
 .sign-up {
   padding: 5px;
   font-size: 20px;
@@ -63,16 +73,31 @@ header {
 }
 
 .login {
-  color: black;
   font-style: serif;
   padding: 15px;
-
+  color: black;
 }
 
-.login:visited {
-  color: inherit;
+.login:hover {
+  background-color: blue;
 }
 
 a {
-  padding: 5px;
+  padding: 10px;
+  margin: 10px;
+  border-top: 5px;
+  color: grey;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+link {
+  color: grey;
+}
+
+link:hover {
+  color: black;
 }
