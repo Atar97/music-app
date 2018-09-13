@@ -2,6 +2,12 @@
   <br><br>
   <a href="<%= edit_band_url(@band) %>">Edit This Band</a>
   <br><br>
+  <h2>Albums</h2>
+  <ul>
+    <% @band.albums.each do |album| %>
+    <li><%= render 'albums/display', album: album %></li>
+    <% end %>
+  </ul>
   <form class="" action="<%= band_url(@band) %>" method="post">
     <%= auth_token %>
     <input type="hidden" name="_method" value="delete">

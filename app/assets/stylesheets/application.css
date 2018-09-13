@@ -27,14 +27,17 @@ h2 {
   font-size: 26px;
 }
 
-.sign_up {
+.sign-up {
   padding: 5px;
   font-size: 20px;
   width: 20%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 250px;
 }
+
 
 .button {
   width: 100px;
