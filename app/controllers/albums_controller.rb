@@ -12,9 +12,8 @@ class AlbumsController < ApplicationController
     if @album.save
       redirect_to band_url(@album.band_id)
     else
-      flash.now[:errors] = @album.errors.full_messages
-      find_band
-      render :new
+      flash[:errors] = @album.errors.full_messages
+      redirect_to new_band_album_url(@album.band_id)
     end
   end
 
@@ -43,7 +42,7 @@ class AlbumsController < ApplicationController
     else
       flash[:errors] = ["Album Couldn't Be Deleted"]
       redirect_to album_url(@album)
-    end 
+    end
   end
 
   private
